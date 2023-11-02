@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: compilar y probar Owner
+name: compilar y probar Pet
 
 on:
   workflow_dispatch:
