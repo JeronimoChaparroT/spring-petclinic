@@ -28,7 +28,7 @@ jobs:
         cache: maven
       
     - name: Build with Maven
-      run: cd appbicis; mvn -B package --file pom.xml -DskipTests
+      run: mvn -B package --file pom.xml -DskipTests
 
     - name: Ejecutar mySQL
       run: ./docker-compose.yml
