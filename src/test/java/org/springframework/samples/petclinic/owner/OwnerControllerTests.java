@@ -37,6 +37,7 @@ import org.assertj.core.util.Lists;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledInNativeImage;
 import org.mockito.Mockito;
@@ -152,6 +153,7 @@ class OwnerControllerTests {
 
 	@Test
 	@Tag("Owner")
+	@Tag("IntegrationTest")
 	void testProcessFindFormByLastName() throws Exception {
 		Page<Owner> tasks = new PageImpl<Owner>(Lists.newArrayList(george()));
 		Mockito.when(this.owners.findByLastName(eq("Franklin"), any(Pageable.class))).thenReturn(tasks);
@@ -162,6 +164,7 @@ class OwnerControllerTests {
 
 	@Test
 	@Tag("Owner")
+	@Tag("UnitTest")
 	void testProcessFindFormNoOwnersFound() throws Exception {
 		Page<Owner> tasks = new PageImpl<Owner>(Lists.newArrayList());
 		Mockito.when(this.owners.findByLastName(eq("Unknown Surname"), any(Pageable.class))).thenReturn(tasks);
