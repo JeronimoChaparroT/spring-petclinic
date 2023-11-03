@@ -30,8 +30,5 @@ jobs:
     - name: Build with Maven
       run: ./mvnw -B package --file pom.xml -DskipTests
 
-    - name: Ejecutar mySQL
-      run: ./docker-compose.yml
-
     - name: probar
       run: ./mvnw test -Dgroups="Pet"
